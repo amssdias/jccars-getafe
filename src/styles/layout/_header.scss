@@ -1,0 +1,137 @@
+@use '../abstracts' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: z('sticky');
+  border-bottom: 1px solid color('line');
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+
+  &__bar {
+    @include container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    height: $header-height;
+
+    @include mq('sm') {
+      gap: 24px;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include mq('lg') {
+      display: flex;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include mq('sm') {
+      gap: 14px;
+    }
+  }
+
+  &__phone {
+    display: none;
+    align-items: center;
+    gap: 7px;
+    color: color('ink');
+    font-size: rem(15px);
+    font-weight: $weight-semibold;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+      color: color('brand-text');
+    }
+
+    @include mq('lg') {
+      display: flex;
+    }
+  }
+
+  &__phone-icon {
+    color: color('brand');
+  }
+
+  // Anidado para ganar en especificidad a `.button`, que se emite después (capa components).
+  &__actions &__toggle {
+    @include mq('lg') {
+      display: none;
+    }
+  }
+}
+
+.nav {
+  align-items: center;
+  gap: 4px;
+
+  &__link {
+    color: color('ink-soft');
+    font-weight: $weight-medium;
+    text-decoration: none;
+
+    &--desktop {
+      padding: 8px 14px;
+      border-radius: $radius-md;
+      font-size: rem(15px);
+      transition: background $duration-base;
+
+      &:hover {
+        background: color('surface-alt');
+        color: color('ink');
+      }
+    }
+
+    &--mobile {
+      padding: 12px 0;
+      border-bottom: 1px solid color('line-soft');
+      color: color('ink');
+      font-size: rem(17px);
+    }
+
+    &--active {
+      color: color('ink');
+    }
+
+    &--desktop#{&}--active {
+      background: color('surface-alt');
+    }
+  }
+}
+
+.mobile-nav {
+  @include container;
+  display: none;
+  flex-direction: column;
+  padding-top: 4px;
+  padding-bottom: 18px;
+
+  &--open {
+    display: flex;
+    animation: fade-in $duration-base ease both;
+
+    @include mq('lg') {
+      display: none;
+    }
+  }
+
+  &__phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 0;
+    color: color('brand-text');
+    font-size: rem(17px);
+    font-weight: $weight-medium;
+    text-decoration: none;
+  }
+}

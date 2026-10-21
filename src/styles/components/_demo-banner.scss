@@ -1,0 +1,22 @@
+@use '../abstracts' as *;
+
+.demo-banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 14px;
+  padding: 9px 16px;
+  background: color('ink');
+  color: color('on-dark-banner');
+  font-size: rem(13px);
+  text-align: center;
+
+  &__link {
+    color: color('brand-on-dark');
+    font-weight: $weight-semibold;
+
+    &:hover {
+      color: color('surface');
+    }
+  }
+}

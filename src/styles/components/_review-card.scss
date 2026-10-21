@@ -1,0 +1,55 @@
+@use '../abstracts' as *;
+
+.quote-card,
+.review-card {
+  @include card;
+  @include stack(14px);
+  margin: 0;
+  padding: 24px;
+}
+
+.quote-card {
+  &__text {
+    font-size: rem(18px);
+    font-weight: $weight-medium;
+    line-height: 1.45;
+  }
+
+  &__author {
+    color: color('muted');
+    font-size: rem(14px);
+  }
+}
+
+.review-card {
+  gap: 12px;
+  padding: 22px;
+  margin-bottom: 16px;
+  break-inside: avoid;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &__date {
+    color: color('muted');
+    font-size: rem(13px);
+  }
+
+  &__text {
+    font-size: rem(16px);
+    line-height: 1.55;
+  }
+
+  &__author {
+    font-size: rem(14px);
+    font-weight: $weight-semibold;
+  }
+
+  &__service {
+    color: color('muted');
+    font-weight: $weight-regular;
+  }
+}

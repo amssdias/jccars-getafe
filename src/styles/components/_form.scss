@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+.form {
+  @include stack(16px);
+
+  &__row,
+  &__grid {
+    @include auto-grid(190px, 16px);
+  }
+
+  &__grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 18px;
+  }
+
+  &__submit {
+    align-self: flex-start;
+  }
+}
+
+.form-alert {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: color('danger');
+  font-size: rem(14px);
+  font-weight: $weight-medium;
+}

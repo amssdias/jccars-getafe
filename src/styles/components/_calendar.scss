@@ -1,0 +1,67 @@
+@use '../abstracts' as *;
+
+.calendar {
+  @include stack(12px);
+  flex: 1 1 300px;
+  min-width: 0;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-weight: $weight-semibold;
+  }
+
+  &__weekdays,
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  &__weekdays {
+    color: color('muted');
+    font-size: rem(12px);
+    font-weight: $weight-semibold;
+    text-align: center;
+
+    span {
+      padding: 4px 0;
+    }
+  }
+
+  &__day {
+    @include reset-button;
+    aspect-ratio: 1;
+    border: 1px solid transparent;
+    border-radius: $radius-md;
+    background: color('surface-alt');
+    font-size: rem(14px);
+    font-weight: $weight-medium;
+    transition: background $duration-fast;
+
+    &:hover:not(:disabled) {
+      background: color('line');
+    }
+
+    &:disabled {
+      background: transparent;
+      color: color('disabled');
+    }
+
+    &--today {
+      border-color: color('ink');
+      font-weight: $weight-semibold;
+    }
+
+    &--selected,
+    &--selected:hover:not(:disabled) {
+      border-color: transparent;
+      background: color('brand');
+      font-weight: $weight-semibold;
+    }
+  }
+}

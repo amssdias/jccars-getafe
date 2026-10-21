@@ -1,0 +1,21 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'variables' as v;
+
+@function rem($px, $base: 16px) {
+  @return math.div($px, $base) * 1rem;
+}
+
+@function color($name) {
+  @if not map.has-key(v.$colors, $name) {
+    @error 'Color desconocido: #{$name}';
+  }
+  @return var(--color-#{$name});
+}
+
+@function z($layer) {
+  @if not map.has-key(v.$z-layers, $layer) {
+    @error 'Capa z-index desconocida: #{$layer}';
+  }
+  @return map.get(v.$z-layers, $layer);
+}

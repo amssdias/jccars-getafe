@@ -1,0 +1,20 @@
+@use '../abstracts' as *;
+
+.filters {
+  @include card;
+  @include auto-grid(190px, 14px);
+  align-items: end;
+  padding: 18px;
+}
+
+.results-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  &__count {
+    font-weight: $weight-semibold;
+  }
+}

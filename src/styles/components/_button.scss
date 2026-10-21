@@ -1,0 +1,87 @@
+@use '../abstracts' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: $radius-md;
+  font-family: inherit;
+  font-size: rem(15px);
+  font-weight: $weight-semibold;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background $duration-base,
+    transform $duration-fast;
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  &--primary {
+    padding-inline: 22px;
+    background: color('brand');
+    color: color('ink');
+
+    &:hover {
+      background: color('brand-hover');
+      color: color('ink');
+    }
+  }
+
+  &--secondary {
+    border-color: color('line-strong');
+    background: color('surface');
+    color: color('ink');
+
+    &:hover:not(:disabled) {
+      background: color('surface-alt');
+      color: color('ink');
+    }
+  }
+
+  &--compact {
+    height: 44px;
+  }
+
+  &--large {
+    height: 54px;
+    padding-inline: 26px;
+    font-size: rem(16px);
+  }
+
+  &--xl {
+    height: 56px;
+    padding-inline: 28px;
+    font-size: rem(16px);
+  }
+
+  &--square {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+
+    .lucide {
+      font-size: 20px;
+    }
+  }
+
+  &--small {
+    width: 40px;
+    height: 40px;
+
+    .lucide {
+      font-size: 18px;
+    }
+  }
+}

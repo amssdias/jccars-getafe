@@ -1,0 +1,92 @@
+@use '../abstracts' as *;
+
+.admin-list {
+  @include card;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+
+  &__empty {
+    padding: 32px;
+    color: color('muted');
+  }
+}
+
+.admin-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 20px;
+  padding: 16px 20px;
+  border-bottom: 1px solid color('line-soft');
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  &--top {
+    align-items: flex-start;
+  }
+
+  &--inactive {
+    opacity: 0.55;
+  }
+
+  &__cell {
+    @include stack(2px);
+    flex: 1.2 1 170px;
+    min-width: 0;
+
+    &--sm {
+      flex: 1 1 150px;
+    }
+
+    &--lg {
+      flex: 1.4 1 200px;
+    }
+
+    &--xl {
+      flex: 2 1 220px;
+    }
+  }
+
+  &__title {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    font-weight: $weight-semibold;
+  }
+
+  &__icon {
+    color: color('brand-text');
+  }
+
+  &__strong {
+    font-weight: $weight-semibold;
+  }
+
+  &__medium {
+    font-weight: $weight-medium;
+  }
+
+  &__soft {
+    color: color('muted');
+    font-weight: $weight-regular;
+  }
+
+  &__meta {
+    color: color('muted');
+    font-size: rem(14px);
+  }
+
+  &__price {
+    flex: 0 0 110px;
+    font-weight: $weight-semibold;
+  }
+
+  &__link {
+    font-size: rem(14px);
+    font-weight: $weight-semibold;
+  }
+}

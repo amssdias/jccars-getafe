@@ -1,0 +1,68 @@
+@use '../abstracts' as *;
+
+.vehicle-card {
+  @include card;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  color: color('ink');
+  text-decoration: none;
+  transition:
+    transform $duration-slow $ease-out-expo,
+    box-shadow $duration-slow;
+
+  &:hover {
+    color: color('ink');
+    box-shadow: $shadow-card;
+    transform: translateY(-4px);
+  }
+
+  &__media {
+    aspect-ratio: 16 / 10;
+  }
+
+  &__body {
+    @include stack(12px);
+    flex: 1;
+    padding: 18px 20px 20px;
+  }
+
+  &__heading {
+    @include stack(2px);
+  }
+
+  &__title {
+    font-size: rem(20px);
+    font-weight: $weight-semibold;
+    letter-spacing: -0.02em;
+  }
+
+  &__version {
+    color: color('muted');
+    font-size: rem(14px);
+  }
+
+  &__specs {
+    color: color('ink-soft');
+    font-size: rem(13px);
+  }
+
+  &__footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid color('line-soft');
+  }
+
+  &__price {
+    white-space: nowrap;
+    font-size: rem(24px);
+    font-weight: $weight-semibold;
+    letter-spacing: -0.02em;
+  }
+}

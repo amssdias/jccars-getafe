@@ -1,0 +1,36 @@
+@use '../abstracts' as *;
+
+.text-link,
+.text-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: color('brand-text');
+  font-size: rem(15px);
+  font-weight: $weight-semibold;
+  text-decoration: none;
+
+  &:hover {
+    color: color('brand-text-strong');
+    text-decoration: underline;
+  }
+}
+
+.text-button {
+  @include reset-button;
+  color: color('brand-text');
+}
+
+.back-link {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 6px;
+  color: color('ink');
+  font-weight: $weight-semibold;
+  text-decoration: none;
+
+  &:hover {
+    color: color('brand-text');
+  }
+}

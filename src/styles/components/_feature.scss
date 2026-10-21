@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+.features {
+  @include auto-grid(250px, 32px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  &__body {
+    @include stack(4px);
+  }
+
+  &__title {
+    font-size: rem(16px);
+    font-weight: $weight-semibold;
+  }
+
+  &__text {
+    color: color('muted');
+    font-size: rem(15px);
+  }
+}

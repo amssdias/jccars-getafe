@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+.booking {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  align-items: flex-start;
+
+  &__panel {
+    @include stack(24px);
+    flex: 2 1 560px;
+    min-width: 0;
+    padding: clamp(20px, 3vw, 32px);
+  }
+
+  .summary {
+    flex: 1 1 300px;
+    min-width: 0;
+  }
+}
+
+.date-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}

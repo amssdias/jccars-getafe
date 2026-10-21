@@ -1,0 +1,94 @@
+// Paleta de marca. Se publica como custom properties en themes/_default.scss;
+// los componentes usan var(--color-*) para poder retematizar sin recompilar.
+$colors: (
+  'ink': #171717,
+  'ink-soft': #3d3d3a,
+  'muted': #5e5e5b,
+  'subtle': #8a8a86,
+  'disabled': #bdbdb9,
+  'disabled-strong': #a9a9a5,
+  'line': #e4e4e2,
+  'line-soft': #ededeb,
+  'line-strong': #d6d6d3,
+  'line-input': #c9c9c5,
+  'surface': #ffffff,
+  'surface-alt': #f3f3f2,
+  'surface-sunken': #f7f7f6,
+  'brand': #f9630b,
+  'brand-hover': #ff7a2b,
+  'brand-text': #c24a00,
+  'brand-text-strong': #9a3a00,
+  'brand-on-dark': #ff8a45,
+  'brand-deep': #3b1a00,
+  'brand-soft': #fff1e8,
+  'brand-softer': #fff6f0,
+  'selection': #ffd9c2,
+  'dark-hover': #2e2e2e,
+  'on-dark': #d4d4d1,
+  'on-dark-muted': #b9b9b5,
+  'on-dark-faint': #c9c9c5,
+  'on-dark-banner': #e8e8e6,
+  'danger': #b42318,
+  'danger-soft': #fdecec,
+  'danger-strong': #a3261e,
+  'success': #22a559,
+  'success-soft': #e6f4ec,
+  'success-strong': #17663a,
+);
+
+$font-sans: 'Geist Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$font-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+$weight-regular: 400;
+$weight-medium: 500;
+$weight-semibold: 600;
+
+$radius-sm: 8px;
+$radius-md: 10px;
+$radius-lg: 12px;
+$radius-xl: 16px;
+$radius-2xl: 20px;
+$radius-3xl: 24px;
+$radius-pill: 999px;
+
+$container-max: 1280px;
+$gutter: 24px;
+$gutter-mobile: 16px;
+$header-height: 72px;
+$sticky-offset: $header-height + 24px;
+
+// Coincide con el punto de corte del diseño original (1020px) para el menú.
+$breakpoints: (
+  'sm': 600px,
+  'md': 768px,
+  'lg': 1020px,
+  'xl': 1280px,
+);
+
+$z-layers: (
+  'base': 1,
+  'sticky': 30,
+  'modal': 50,
+);
+
+$ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+$duration-fast: 0.15s;
+$duration-base: 0.2s;
+$duration-slow: 0.3s;
+
+$shadow-sm: 0 1px 3px rgba(23, 23, 23, 0.12);
+$shadow-card: 0 18px 36px rgba(23, 23, 23, 0.1);
+$shadow-card-soft: 0 18px 36px rgba(23, 23, 23, 0.08);
+$shadow-hero: 0 24px 48px rgba(23, 23, 23, 0.14);
+$shadow-modal: 0 30px 60px rgba(23, 23, 23, 0.3);
+
+// Parejas fondo/texto compartidas por etiquetas y chips de estado.
+$tones: (
+  'brand': ('brand-soft', 'brand-text-strong'),
+  'neutral': ('surface-alt', 'ink-soft'),
+  'muted': ('line-soft', 'ink-soft'),
+  'dark': ('ink', 'surface'),
+  'success': ('success-soft', 'success-strong'),
+  'danger': ('danger-soft', 'danger-strong'),
+  'solid': ('brand', 'ink'),
+);

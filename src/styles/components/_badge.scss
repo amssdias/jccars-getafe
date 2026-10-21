@@ -1,0 +1,35 @@
+@use 'sass:list';
+@use '../abstracts' as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: $radius-pill;
+  font-size: rem(12px);
+  font-weight: $weight-semibold;
+  line-height: 1.4;
+  white-space: nowrap;
+
+  @each $name, $pair in $tones {
+    &--#{$name} {
+      background: color(list.nth($pair, 1));
+      color: color(list.nth($pair, 2));
+    }
+  }
+
+  // Aviso de contenido de ejemplo: más discreto que una etiqueta normal.
+  &--note {
+    align-self: flex-start;
+    padding: 3px 8px;
+    background: color('brand-soft');
+    color: color('brand-text-strong');
+    font-size: rem(11px);
+  }
+}
+
+.badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}

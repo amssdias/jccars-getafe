@@ -1,0 +1,36 @@
+@use '../abstracts' as *;
+
+.timeline {
+  @include auto-grid(230px, 24px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    @include stack(8px);
+    padding-top: 18px;
+    border-top: 3px solid color('ink');
+
+    &--highlight {
+      border-top-color: color('brand');
+    }
+  }
+
+  &__year {
+    color: color('brand-text');
+    font-size: rem(15px);
+    font-weight: $weight-medium;
+  }
+
+  &__title {
+    font-size: rem(19px);
+    font-weight: $weight-semibold;
+    letter-spacing: -0.02em;
+  }
+
+  &__text {
+    color: color('muted');
+    font-size: rem(15px);
+    line-height: 1.55;
+  }
+}

@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+.rating-picker {
+  @include stack(7px);
+  padding: 0;
+  margin: 0;
+  border: 0;
+
+  &__options {
+    display: flex;
+    gap: 4px;
+  }
+
+  &__star {
+    @include reset-button;
+    width: 40px;
+    height: 40px;
+    border: 1px solid color('line');
+    border-radius: $radius-md;
+    background: color('surface');
+    color: color('line-strong');
+    font-size: 20px;
+
+    &--on {
+      color: color('brand');
+    }
+  }
+}

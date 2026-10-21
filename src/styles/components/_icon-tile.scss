@@ -1,0 +1,39 @@
+@use '../abstracts' as *;
+
+.icon-tile {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: $radius-lg;
+  background: color('brand-soft');
+  color: color('brand-text');
+  font-size: 21px;
+
+  &--sm {
+    width: 38px;
+    height: 38px;
+    border-radius: $radius-md;
+    font-size: 19px;
+  }
+
+  &--lg {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    font-size: 26px;
+  }
+
+  &--xl {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    font-size: 28px;
+  }
+
+  &--solid {
+    background: color('brand');
+    color: color('ink');
+  }
+}

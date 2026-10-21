@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+.status-pill {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border: 1px solid color('line');
+  border-radius: $radius-pill;
+  background: color('surface');
+  font-size: rem(14px);
+  font-weight: $weight-semibold;
+
+  &__dot {
+    flex: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: color('subtle');
+
+    &--open {
+      background: color('success');
+    }
+  }
+}

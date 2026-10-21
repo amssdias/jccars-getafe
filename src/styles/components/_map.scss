@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+.map {
+  width: 100%;
+  min-height: 300px;
+  height: 100%;
+  border: 0;
+  border-radius: $radius-lg;
+
+  &--short {
+    height: 300px;
+    border-radius: $radius-xl;
+  }
+}

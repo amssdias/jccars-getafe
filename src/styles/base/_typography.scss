@@ -1,0 +1,30 @@
+@use '../abstracts' as *;
+
+body {
+  background: color('surface');
+  color: color('ink');
+  font-family: $font-sans;
+  font-size: rem(16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: color('brand-text');
+
+  &:hover {
+    color: color('brand-text-strong');
+  }
+}
+
+:focus-visible {
+  @include focus-ring;
+}
+
+::selection {
+  background: color('selection');
+}
+
+.mono {
+  font-family: $font-mono;
+}

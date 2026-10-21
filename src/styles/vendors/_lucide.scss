@@ -1,0 +1,9 @@
+// Los iconos de Lucide se insertan como <svg class="lucide icon">; heredan color
+// y tamaño del texto que los rodea salvo que un componente diga otra cosa.
+.lucide {
+  flex: none;
+  width: 1em;
+  height: 1em;
+  stroke-width: 2;
+  vertical-align: middle;
+}

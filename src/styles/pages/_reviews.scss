@@ -1,0 +1,15 @@
+@use '../abstracts' as *;
+
+.reviews-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px 32px;
+}
+
+// Columnas CSS en vez de grid para que las opiniones de distinta longitud encajen sin huecos.
+.masonry {
+  column-gap: 16px;
+  columns: 2 280px;
+}

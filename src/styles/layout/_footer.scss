@@ -1,0 +1,60 @@
+@use '../abstracts' as *;
+
+.footer {
+  background: color('ink');
+  color: color('on-dark-muted');
+
+  &__inner {
+    @include container;
+    @include stack(36px);
+    padding-top: 56px;
+    padding-bottom: 28px;
+  }
+
+  &__grid {
+    @include auto-grid(190px, 32px);
+  }
+
+  &__col {
+    @include stack(10px);
+    font-size: rem(15px);
+    line-height: 1.5;
+  }
+
+  &__title {
+    color: color('surface');
+    font-weight: $weight-semibold;
+  }
+
+  &__link {
+    color: color('on-dark');
+    text-decoration: none;
+
+    &:hover {
+      color: color('brand-on-dark');
+    }
+
+    &--icon {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+  }
+
+  &__legal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    padding-top: 20px;
+    border-top: 1px solid color('dark-hover');
+    font-size: rem(13px);
+  }
+
+  &__legal-link {
+    color: color('on-dark-muted');
+
+    &:hover {
+      color: color('surface');
+    }
+  }
+}

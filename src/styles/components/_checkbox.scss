@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: color('ink-soft');
+  font-size: rem(14px);
+  line-height: 1.5;
+  cursor: pointer;
+
+  &__input {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    margin: 2px 0 0;
+    accent-color: color('brand');
+  }
+}

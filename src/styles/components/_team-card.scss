@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+.team-card {
+  @include stack(10px);
+
+  &__media {
+    aspect-ratio: 4 / 5;
+    border-radius: $radius-xl;
+  }
+
+  &__name {
+    font-size: rem(19px);
+    font-weight: $weight-semibold;
+  }
+
+  &__role {
+    color: color('brand-text');
+    font-size: rem(15px);
+    font-weight: $weight-medium;
+  }
+
+  &__text {
+    color: color('muted');
+    font-size: rem(15px);
+  }
+}

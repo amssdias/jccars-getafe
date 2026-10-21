@@ -1,0 +1,48 @@
+@use '../abstracts' as *;
+
+.choice-grid {
+  @include auto-fill-grid(240px, 12px);
+}
+
+.choice {
+  @include reset-button;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  border: 1px solid color('line');
+  border-radius: $radius-lg;
+  background: color('surface');
+  text-align: left;
+  transition:
+    border-color $duration-base,
+    background $duration-base;
+
+  &:hover {
+    border-color: color('line-strong');
+  }
+
+  &--selected,
+  &--selected:hover {
+    border-color: color('brand');
+    background: color('brand-softer');
+    box-shadow: inset 0 0 0 1px color('brand');
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: rem(15px);
+    font-weight: $weight-semibold;
+  }
+
+  &__icon {
+    color: color('brand-text');
+  }
+
+  &__meta {
+    color: color('muted');
+    font-size: rem(13px);
+  }
+}

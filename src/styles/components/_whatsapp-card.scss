@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+.whatsapp-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  border-radius: $radius-xl;
+  background: color('ink');
+  color: color('surface');
+  text-decoration: none;
+  transition: background $duration-base;
+
+  &:hover {
+    background: color('dark-hover');
+    color: color('surface');
+  }
+
+  &__body {
+    @include stack(2px);
+  }
+
+  &__title {
+    font-size: rem(17px);
+    font-weight: $weight-semibold;
+  }
+
+  &__text {
+    color: color('on-dark');
+    font-size: rem(14px);
+  }
+}

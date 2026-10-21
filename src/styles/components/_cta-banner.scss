@@ -1,0 +1,67 @@
+@use '../abstracts' as *;
+
+.cta-banner {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px 36px;
+  overflow: hidden;
+  padding: clamp(28px, 5vw, 64px);
+  border-radius: $radius-3xl;
+  background: color('ink');
+  color: color('surface');
+
+  &__accent {
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 240px;
+    height: 240px;
+    border-radius: 40px;
+    background: color('brand');
+    opacity: 0.9;
+    transform: rotate(18deg);
+
+    @include mq-down('sm') {
+      top: -120px;
+      right: -120px;
+    }
+  }
+
+  &__content {
+    @include stack(18px);
+    position: relative;
+    max-width: 560px;
+  }
+
+  &__title {
+    @include heading-section;
+  }
+
+  &__steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin: 0;
+    padding: 0;
+    color: color('on-dark');
+    font-size: rem(15px);
+    list-style: none;
+  }
+
+  &__step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .lucide {
+      color: color('brand');
+    }
+  }
+
+  &__button {
+    position: relative;
+  }
+}

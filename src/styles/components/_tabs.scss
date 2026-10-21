@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+.tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-self: flex-start;
+  gap: 6px;
+  padding: 5px;
+  border: 1px solid color('line');
+  border-radius: $radius-lg;
+  background: color('surface');
+
+  &__item {
+    @include reset-button;
+    height: 38px;
+    padding: 0 16px;
+    border-radius: $radius-sm;
+    color: color('ink-soft');
+    font-size: rem(14px);
+    font-weight: $weight-semibold;
+
+    &:hover {
+      background: color('surface-alt');
+    }
+
+    &--active,
+    &--active:hover {
+      background: color('ink');
+      color: color('surface');
+    }
+  }
+}

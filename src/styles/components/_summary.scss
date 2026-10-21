@@ -1,0 +1,47 @@
+@use '../abstracts' as *;
+
+.summary {
+  @include stack(14px);
+  padding: 24px;
+  border-radius: $radius-xl;
+  background: color('surface-alt');
+
+  @include mq('lg') {
+    position: sticky;
+    top: $sticky-offset;
+  }
+
+  &__title {
+    font-size: rem(17px);
+    font-weight: $weight-semibold;
+  }
+
+  &__list {
+    @include stack(12px);
+    margin: 0;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    font-size: rem(15px);
+
+    dt {
+      color: color('muted');
+    }
+
+    dd {
+      margin: 0;
+      font-weight: $weight-semibold;
+      text-align: right;
+    }
+  }
+
+  &__note {
+    padding-top: 12px;
+    border-top: 1px solid color('line');
+    color: color('muted');
+    font-size: rem(14px);
+  }
+}

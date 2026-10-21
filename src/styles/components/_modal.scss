@@ -1,0 +1,73 @@
+@use '../abstracts' as *;
+
+.is-locked,
+.is-locked body {
+  overflow: hidden;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: z('modal');
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(23, 23, 23, 0.55);
+
+  // Solo al abrir: el modal se repinta cuando hay errores de validación.
+  &--enter {
+    animation: fade-in $duration-base ease both;
+  }
+
+  &--enter &__dialog {
+    animation: fade-up $duration-slow $ease-out-expo both;
+  }
+
+  &__dialog {
+    width: min(520px, 100%);
+    max-height: calc(100dvh - 32px);
+    overflow: auto;
+    padding: 22px;
+    border-radius: $radius-xl;
+    background: color('surface');
+    box-shadow: $shadow-modal;
+
+    @include mq('sm') {
+      padding: 28px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  &__heading {
+    @include stack(4px);
+  }
+
+  &__title {
+    font-size: rem(22px);
+    font-weight: $weight-semibold;
+    letter-spacing: -0.02em;
+  }
+
+  &__subtitle,
+  &__text {
+    color: color('muted');
+    font-size: rem(15px);
+  }
+
+  &__done {
+    @include stack(12px);
+    align-items: flex-start;
+  }
+
+  &__done-title {
+    font-size: rem(20px);
+    font-weight: $weight-semibold;
+  }
+}

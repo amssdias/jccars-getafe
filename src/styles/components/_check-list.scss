@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+
+.check-list {
+  @include auto-fill-grid(260px, 10px 24px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+
+    .lucide {
+      color: color('brand');
+    }
+  }
+}

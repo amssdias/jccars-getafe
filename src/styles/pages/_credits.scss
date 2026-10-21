@@ -1,0 +1,20 @@
+@use '../abstracts' as *;
+
+.credits {
+  @include auto-fill-grid(280px, 12px 24px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    @include stack(2px);
+    padding: 12px 0;
+    border-bottom: 1px solid color('line-soft');
+    font-size: rem(15px);
+  }
+
+  &__alt {
+    color: color('muted');
+    font-size: rem(14px);
+  }
+}

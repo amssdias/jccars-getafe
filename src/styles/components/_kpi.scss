@@ -1,0 +1,36 @@
+@use '../abstracts' as *;
+
+.kpi-grid {
+  @include auto-grid(150px, 14px);
+}
+
+.kpi {
+  @include reset-button;
+  @include card;
+  @include stack(6px);
+  padding: 18px 20px;
+  text-align: left;
+  transition: box-shadow $duration-base;
+
+  &:hover {
+    box-shadow: $shadow-card-soft;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: color('muted');
+    font-size: rem(14px);
+  }
+
+  &__icon {
+    color: color('brand');
+  }
+
+  &__value {
+    font-size: rem(32px);
+    font-weight: $weight-semibold;
+    letter-spacing: -0.03em;
+  }
+}

@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: color('muted');
+    font-size: rem(15px);
+    font-weight: $weight-semibold;
+
+    &--current,
+    &--done {
+      color: color('ink');
+    }
+  }
+
+  &__number {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: color('line-soft');
+    color: color('muted');
+    font-size: rem(14px);
+
+    .steps__item--current & {
+      background: color('brand');
+      color: color('ink');
+    }
+
+    .steps__item--done & {
+      background: color('ink');
+      color: color('surface');
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@use '../abstracts' as *;
+
+.segmented {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-self: flex-start;
+  padding: 4px;
+  border-radius: $radius-pill;
+  background: color('surface-alt');
+
+  &__item {
+    @include reset-button;
+    height: 38px;
+    padding: 0 18px;
+    border-radius: $radius-pill;
+    font-size: rem(14px);
+    font-weight: $weight-semibold;
+    transition: background $duration-base;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    &--active,
+    &--active:hover {
+      background: color('surface');
+      box-shadow: $shadow-sm;
+    }
+  }
+
+  &--large &__item {
+    height: 40px;
+    font-size: rem(15px);
+  }
+}

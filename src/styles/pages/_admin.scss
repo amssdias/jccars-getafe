@@ -1,0 +1,42 @@
+@use '../abstracts' as *;
+
+.admin {
+  min-height: 80vh;
+  background: color('surface-alt');
+
+  .page {
+    padding-top: 36px;
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  &__title {
+    font-size: rem(28px);
+    font-weight: $weight-semibold;
+    letter-spacing: -0.03em;
+
+    @include mq('md') {
+      font-size: rem(32px);
+    }
+  }
+
+  &__subtitle {
+    color: color('muted');
+    font-size: rem(15px);
+  }
+}
+
+.admin-form {
+  @include auto-grid(150px, 12px);
+  align-items: end;
+
+  &__submit {
+    width: 100%;
+  }
+}

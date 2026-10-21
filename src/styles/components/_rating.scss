@@ -1,0 +1,49 @@
+@use '../abstracts' as *;
+
+.stars {
+  color: color('brand');
+  letter-spacing: 2px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  &--boxed {
+    gap: 16px;
+    padding: 18px 24px;
+    border-radius: $radius-xl;
+    background: color('surface-alt');
+  }
+
+  &__score {
+    font-size: rem(56px);
+    font-weight: $weight-semibold;
+    letter-spacing: -0.04em;
+    line-height: 1;
+
+    @include mq('md') {
+      font-size: rem(64px);
+    }
+  }
+
+  &--boxed &__score {
+    font-size: rem(56px);
+  }
+
+  &__meta {
+    @include stack(2px);
+  }
+
+  &__stars {
+    color: color('brand');
+    font-size: rem(20px);
+    letter-spacing: 2px;
+  }
+
+  &__count {
+    color: color('muted');
+    font-size: rem(14px);
+  }
+}

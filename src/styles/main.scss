@@ -1,0 +1,8 @@
+// Arquitectura 7-1: abstracts no genera CSS; el resto se emite en este orden.
+@use 'abstracts';
+@use 'vendors';
+@use 'base';
+@use 'layout';
+@use 'components';
+@use 'pages';
+@use 'themes';

@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+.page-intro {
+  @include stack(14px);
+  max-width: 720px;
+
+  &__lead {
+    color: color('muted');
+    font-size: clamp(17px, 1.5vw, 19px);
+    line-height: 1.55;
+    max-width: 48ch;
+  }
+}

@@ -1,0 +1,164 @@
+@use '../abstracts' as *;
+
+.container {
+  @include container;
+}
+
+.main {
+  display: block;
+
+  &:focus {
+    outline: none;
+  }
+
+  &--enter > * {
+    animation: fade-up 0.6s $ease-out-expo both;
+  }
+}
+
+.page {
+  padding-block: 40px 72px;
+
+  @include mq('md') {
+    padding-block: 56px 96px;
+  }
+
+  &--compact {
+    padding-top: 24px;
+
+    @include mq('md') {
+      padding-top: 28px;
+    }
+  }
+
+  &--flush {
+    padding-block: 0;
+  }
+}
+
+.section {
+  padding-block: 56px;
+
+  @include mq('md') {
+    padding-block: 80px 96px;
+  }
+
+  &--tight-bottom {
+    padding-bottom: 8px;
+
+    @include mq('md') {
+      padding-bottom: 24px;
+    }
+  }
+
+  &--first {
+    padding-top: 40px;
+
+    @include mq('md') {
+      padding-top: 56px;
+      padding-bottom: 72px;
+    }
+  }
+
+  &--muted {
+    background: color('surface-alt');
+
+    @include mq('md') {
+      padding-block: 72px;
+    }
+  }
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+
+  &--xs {
+    gap: 6px;
+  }
+
+  &--sm {
+    gap: 14px;
+  }
+
+  &--md {
+    gap: 20px;
+  }
+
+  &--lg {
+    gap: 28px;
+
+    @include mq('md') {
+      gap: 32px;
+    }
+  }
+
+  &--xl {
+    gap: 32px;
+
+    @include mq('md') {
+      gap: 40px;
+    }
+  }
+}
+
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  align-items: flex-start;
+
+  &__main {
+    flex: 2 1 520px;
+    min-width: 0;
+  }
+
+  &__aside {
+    flex: 1 1 300px;
+    min-width: 0;
+  }
+
+  &--contact &__main {
+    flex: 1.3 1 480px;
+  }
+
+  &--contact &__aside {
+    flex: 1 1 340px;
+  }
+}
+
+.card-grid {
+  @include auto-fill-grid(300px, 20px);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  &--wide {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  }
+
+  &--narrow {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+    gap: 24px;
+  }
+
+  &__item {
+    display: flex;
+  }
+}
+
+.button-group,
+.link-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+}
+
+.link-group {
+  gap: 18px;
+}
+
+.divider {
+  height: 1px;
+  background: color('line-soft');
+}

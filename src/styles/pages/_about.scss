@@ -1,0 +1,55 @@
+@use '../abstracts' as *;
+
+.about-intro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 48px;
+  align-items: center;
+
+  &__content {
+    @include stack(20px);
+    flex: 1 1 420px;
+    min-width: 0;
+  }
+
+  &__media {
+    flex: 1 1 420px;
+    min-width: 0;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.installations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  &__figure {
+    @include stack(10px);
+    flex: 1;
+    margin: 0;
+
+    &--main {
+      flex: 2 1 520px;
+    }
+  }
+
+  &__media {
+    aspect-ratio: 4 / 3;
+    border-radius: $radius-xl;
+
+    .installations__figure--main & {
+      aspect-ratio: 16 / 10;
+    }
+  }
+
+  &__caption {
+    color: color('muted');
+    font-size: rem(15px);
+  }
+
+  &__side {
+    @include stack(16px);
+    flex: 1 1 300px;
+  }
+}

@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+.logo {
+  display: block;
+  flex: none;
+  overflow: hidden;
+
+  &__img {
+    max-width: none;
+  }
+
+  // El logo original es cuadrado y trae el lema debajo; en la cabecera se
+  // recorta para mostrar solo la llama y "JC Cars".
+  &--header {
+    width: 98px;
+    height: 57px;
+    mix-blend-mode: multiply;
+
+    .logo__img {
+      width: 108px;
+      height: auto;
+      margin-top: -29px;
+    }
+  }
+
+  &--footer {
+    width: 180px;
+    height: 110px;
+    border-radius: $radius-lg;
+    background: color('surface');
+
+    .logo__img {
+      width: 177px;
+      height: auto;
+      margin: -40px 0 0 8px;
+    }
+  }
+}

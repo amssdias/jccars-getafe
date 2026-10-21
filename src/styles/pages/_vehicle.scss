@@ -1,0 +1,63 @@
+@use '../abstracts' as *;
+
+.vehicle-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  align-items: flex-start;
+
+  .gallery {
+    flex: 1.4 1 480px;
+    min-width: 0;
+  }
+
+  &__info {
+    @include stack(20px);
+    flex: 1 1 360px;
+    min-width: 0;
+
+    @include mq('lg') {
+      position: sticky;
+      top: $sticky-offset;
+    }
+  }
+
+  &__heading {
+    @include stack(4px);
+  }
+
+  &__version {
+    color: color('muted');
+    font-size: rem(18px);
+  }
+
+  &__price-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__price {
+    font-size: rem(36px);
+    font-weight: $weight-semibold;
+    letter-spacing: -0.03em;
+
+    @include mq('md') {
+      font-size: rem(40px);
+    }
+  }
+
+  &__warranty {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: rem(15px);
+    font-weight: $weight-medium;
+
+    .lucide {
+      color: color('brand');
+      font-size: 18px;
+    }
+  }
+}

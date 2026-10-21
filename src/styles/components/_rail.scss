@@ -1,0 +1,20 @@
+@use '../abstracts' as *;
+
+// Carrusel horizontal con scroll nativo y snap; en móvil asoma la siguiente tarjeta.
+.rail {
+  display: grid;
+  grid-auto-columns: minmax(280px, 330px);
+  grid-auto-flow: column;
+  gap: 18px;
+  margin: 0;
+  padding: 0 0 12px;
+  overflow-x: auto;
+  list-style: none;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+
+  &__item {
+    display: flex;
+    scroll-snap-align: start;
+  }
+}

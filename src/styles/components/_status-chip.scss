@@ -1,0 +1,25 @@
+@use 'sass:list';
+@use '../abstracts' as *;
+
+.status-chip {
+  @include reset-button;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: $radius-pill;
+  font-size: rem(13px);
+  font-weight: $weight-semibold;
+  white-space: nowrap;
+
+  @each $name, $pair in $tones {
+    &--#{$name} {
+      background: color(list.nth($pair, 1));
+      color: color(list.nth($pair, 2));
+    }
+  }
+
+  &--select {
+    height: 38px;
+    padding: 0 10px;
+    font-size: rem(14px);
+  }
+}

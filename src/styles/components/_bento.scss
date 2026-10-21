@@ -1,0 +1,122 @@
+@use '../abstracts' as *;
+
+// Bento de servicios destacados en la home.
+.bento {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+  gap: 16px;
+
+  @include mq('md') {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include mq('lg') {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+    overflow: hidden;
+    border: 1px solid transparent;
+    border-radius: $radius-xl;
+
+    &--featured {
+      border-color: color('ink');
+      background: color('ink');
+      color: color('surface');
+
+      @include mq('md') {
+        grid-column: span 2;
+      }
+
+      @include mq('lg') {
+        grid-row: span 2;
+      }
+    }
+
+    &--brand {
+      border-color: color('brand');
+      background: color('brand');
+      color: color('ink');
+    }
+
+    &--outline,
+    &--photo {
+      border-color: color('line');
+      background: color('surface');
+      color: color('ink');
+    }
+
+    &--muted {
+      background: color('surface-alt');
+      color: color('ink');
+    }
+  }
+
+  &__media {
+    flex: 1;
+    min-height: 200px;
+  }
+
+  &__body {
+    @include stack(8px);
+    padding: 22px;
+  }
+
+  &__icon {
+    font-size: 24px;
+  }
+
+  &__title {
+    font-size: rem(19px);
+    font-weight: $weight-semibold;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+
+    .bento__item--featured & {
+      font-size: rem(26px);
+    }
+  }
+
+  &__text {
+    max-width: 40ch;
+    color: color('muted');
+    font-size: rem(15px);
+
+    .bento__item--featured & {
+      color: color('on-dark-faint');
+    }
+
+    .bento__item--brand & {
+      color: color('brand-deep');
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 6px;
+  }
+
+  &__price {
+    font-weight: $weight-semibold;
+  }
+
+  &__link {
+    @include reset-button;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: rem(15px);
+    font-weight: $weight-semibold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

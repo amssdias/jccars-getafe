@@ -1,0 +1,54 @@
+@use '../abstracts' as *;
+
+.confirmation {
+  @include card;
+  @include stack(20px);
+  max-width: 720px;
+  padding: clamp(24px, 4vw, 44px);
+
+  &--plain {
+    gap: 14px;
+    align-items: flex-start;
+    max-width: none;
+    padding: 0;
+    border: 0;
+  }
+
+  &__title {
+    @include heading-section;
+    font-size: clamp(28px, 3.4vw, 40px);
+
+    &--sm {
+      font-size: rem(24px);
+      letter-spacing: -0.02em;
+    }
+  }
+
+  &__text {
+    color: color('muted');
+    font-size: rem(17px);
+    line-height: 1.55;
+  }
+
+  &__details {
+    @include auto-grid(180px, 16px);
+    margin: 0;
+    padding: 20px;
+    border-radius: $radius-lg;
+    background: color('surface-alt');
+  }
+
+  &__item {
+    @include stack(2px);
+
+    dt {
+      color: color('muted');
+      font-size: rem(13px);
+    }
+
+    dd {
+      margin: 0;
+      font-weight: $weight-semibold;
+    }
+  }
+}

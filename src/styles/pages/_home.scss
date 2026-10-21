@@ -1,0 +1,114 @@
+@use '../abstracts' as *;
+
+.hero {
+  background: color('surface-alt');
+
+  &__inner {
+    @include container;
+    display: grid;
+    gap: 40px;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 56px;
+
+    @include mq('lg') {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 56px;
+      padding-top: 56px;
+      padding-bottom: 72px;
+    }
+  }
+
+  &__content {
+    @include stack(24px);
+  }
+
+  &__title {
+    @include heading-display;
+    font-size: clamp(38px, 5.4vw, 68px);
+  }
+
+  &__lead {
+    max-width: 44ch;
+    color: color('muted');
+    font-size: clamp(17px, 1.5vw, 20px);
+    line-height: 1.55;
+  }
+
+  &__visual {
+    position: relative;
+    padding: 0 0 16px 16px;
+
+    @include mq('sm') {
+      padding: 0 0 22px 22px;
+    }
+  }
+
+  &__accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 62%;
+    height: 70%;
+    border-radius: $radius-2xl;
+    background: color('brand');
+  }
+
+  &__media {
+    aspect-ratio: 4 / 3;
+    border-radius: $radius-2xl;
+    box-shadow: $shadow-hero;
+  }
+}
+
+.reviews-teaser {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+
+  &__intro {
+    @include stack(16px);
+    flex: 1 1 300px;
+  }
+
+  &__list {
+    @include auto-grid(260px, 16px);
+    flex: 2 1 520px;
+    min-width: 0;
+  }
+}
+
+.location {
+  @include card;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  &__info {
+    @include stack(20px);
+    flex: 1 1 340px;
+    padding: clamp(24px, 4vw, 44px);
+  }
+
+  &__title {
+    @include heading-section;
+    font-size: clamp(28px, 3vw, 38px);
+  }
+
+  &__actions {
+    margin-top: auto;
+  }
+
+  &__map {
+    display: flex;
+    flex: 1.3 1 420px;
+    min-width: 0;
+    min-height: 320px;
+    padding: 8px;
+
+    @include mq-down('sm') {
+      flex-basis: 100%;
+    }
+  }
+}

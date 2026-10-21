@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+.icon-button {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid color('line');
+  border-radius: $radius-sm;
+  background: color('surface');
+  color: color('ink');
+  cursor: pointer;
+
+  &--danger {
+    color: color('danger');
+
+    &:hover {
+      background: color('danger-soft');
+    }
+  }
+}
